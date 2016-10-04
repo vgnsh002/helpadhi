@@ -1,3 +1,10 @@
+@import url(http://weloveiconfonts.com/api/?family=fontawesome);
+
+/* fontawesome */
+[class*="fontawesome-"]:before {
+  font-family: 'FontAwesome', sans-serif;
+}
+
 body,
 div,
 ul,
@@ -61,7 +68,6 @@ h5 {
 
 }
 
-
 .date-text {
   font-style: italic;
   font-size: 14px;
@@ -102,6 +108,7 @@ a {
 #skills-h3 {
   color: #f5ae23;
   display: none;
+  padding-left:10px;
 }
 
 .orange {
@@ -183,7 +190,38 @@ span {
   }
 }
 
-@media only screen and (max-width:900px) {
+@media only screen and (max-width: 550px) {
+    .burger-nav {
+        height: 40px;
+        width: 100%
+        display: block;
+        cursor: pointer;
+        background: url(../images/burger.png) no-repeat 98% center #505050;
+    }    
+    div .center-content {
+        width: 100%;
+        padding:0;
+    }
+    div #topContacts {
+        overflow: hidden;
+        height: 0;
+    }
+    div #topContacts.open {
+        height:auto;
+    }
+    div #topContacts span {
+        float: none;
+        width: 100%;
+        margin: 0;
+        border-bottom: 3px solid #404040;
+        display: block;
+        padding: 10px;
+        text-align: center;
+    }
+
+}
+
+@media only screen and (max-width: 900px) {
   .biopic {
     width: 175px;
   }
@@ -218,4 +256,16 @@ span {
   .biopic {
     display: block;
   }
+}
+
+button {
+  color: #000;
+  background: #fff;
+  padding: 1em;
+  margin-left: 45%;
+  box-shadow: 3px 2px 5px;
+}
+
+.onlineHead {
+  padding-left: 0px;
 }
