@@ -8,16 +8,16 @@
 
   </head>
   <body>
-    <h1 id="head"></h1>
-    <h3 id="sub"></h3>
+    <form>
+      <label for="pnr">Speak pnr here:</label>
+      <input type="text" id="pnr" placeholder="speech output"/>
+    </form>
+
     <script type="text/javascript">
       if(annyang){
         var commands = {
           'start *val':function(val){
-            $('#head').text(val);
-          },
-          'create *val':function(val){
-            $('#sub').text(val);
+            $('#pnr').text(val);
           }
         };
         annyang.addCommands(commands);
