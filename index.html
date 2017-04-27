@@ -8,6 +8,7 @@
 
   </head>
   <body>
+    <h1 id="ab"></h1>
     <form>
       <label for="pnr">Speak pnr here:</label>
       <input type="text" id="pnr" placeholder="speech output"/>
@@ -18,6 +19,7 @@
         var commands = {
           'start *val':function(val){
             $('#pnr').val(val);
+            $("#ab").text(val);
           }
         };
         annyang.addCommands(commands);
