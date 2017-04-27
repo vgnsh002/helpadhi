@@ -11,22 +11,20 @@
     <h1 id="ab"></h1>
     <form>
       <label for="pnr">Speak pnr here:</label>
-      <input type="text" id="pnr" placeholder="speech output"/><span><button type="button" name="button" onclick="catch()">press</button></span>
+      <input type="text" id="pnr" placeholder="speech output"/><span><button type="button" onclick="annyang.start()" name="button">click and speak</button></span>
     </form>
 
     <script type="text/javascript">
-
       if(annyang){
         var commands = {
-          'start *val':function catch(val){
+          'start *val':function(val){
             $('#pnr').val(val);
             $("#ab").text(val);
-            $("#ab").text("its working#");
           }
         };
         annyang.addCommands(commands);
         annyang.debug();
-        annyang.start();
+
       }
 
     </script>
