@@ -9,11 +9,15 @@
   </head>
   <body>
     <h1 id="head"></h1>
+    <h3 id="sub"></h3>
     <script type="text/javascript">
       if(annyang){
         var commands = {
           'start *val':function(val){
             $('#head').text(val);
+          },
+          'create *val':function(val){
+            $('#sub').text(val);
           }
         };
         annyang.addCommands(commands);
