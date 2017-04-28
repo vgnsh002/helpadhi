@@ -15,9 +15,11 @@
     </form>
 
     <script type="text/javascript">
+    var num;
       if(annyang){
         var commands = {
           '*vail':function(vail){
+            num=vail;
             $('#pnr').val(vail);
             $("#ab").text(vail);
           }
@@ -26,6 +28,7 @@
         annyang.debug();
 
       }
+      alert(num);
 
     </script>
   </body>
