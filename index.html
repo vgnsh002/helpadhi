@@ -19,9 +19,9 @@
       if(annyang){
         var commands = {
           '*vail':function(vail){
-            num=vail;
             $('#pnr').val(vail);
             $("#ab").text(vail);
+            num=vail;
           }
         };
         annyang.addCommands(commands);
