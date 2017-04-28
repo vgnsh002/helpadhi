@@ -17,12 +17,13 @@
     <h1 id="aa"></h1>
 
     <script type="text/javascript">
+      var cont;
       if(annyang){
         var commands = {
           '*vail':function(vail){
             $('#pnr').val(vail);
             $("#ab").text(vail);
-            
+            cont = $("#pnr").val();            
           }
         };
         annyang.addCommands(commands);
@@ -32,8 +33,6 @@
         success: function(response){
           var res = JSON.stringify(response);
           var obj = JSON.parse(res);
-          var cont = $("#pnr").val();
-          alert(cont);
           if(cont==obj.pnr){
               $("#aa").text(obj.hello);
               
