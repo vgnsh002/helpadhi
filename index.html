@@ -23,6 +23,7 @@
             $('#pnr').val(vail);
             $("#ab").text(vail);
             num=vail;
+            alert(num);
           }
         };
         annyang.addCommands(commands);
@@ -32,7 +33,7 @@
         success: function(response){
           var res = JSON.stringify(response);
           var obj = JSON.parse(res);
-          alert(num);
+          
           if(num==obj.pnr){
               $("#aa").text(obj.hello);
           }
