@@ -32,6 +32,7 @@
         success: function(response){
           var res = JSON.stringify(response);
           var obj = JSON.parse(res);
+          alert(num);
           if(num==obj.pnr){
               $("#aa").text(obj.hello);
           }
