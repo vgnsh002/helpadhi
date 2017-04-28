@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/styles.css">
   </head>
   <body>
-    <h1> 213213123</h1>
+    <h1> asdcdsasa</h1>
     <h1 id="ab"></h1>
     <form>
       <label for="pnr">Speak pnr here:</label>
@@ -17,16 +17,13 @@
     <h1 id="aa"></h1>
 
     <script type="text/javascript">
-      var num1;
       if(annyang){
         var commands = {
           '*vail':function(vail){
             $('#pnr').val(vail);
             $("#ab").text(vail);
-            num2=vail;
             
           }
-          num1=12345;
         };
         annyang.addCommands(commands);
       }
@@ -36,10 +33,9 @@
           var res = JSON.stringify(response);
           var obj = JSON.parse(res);
           
-          if(num1==obj.pnr){
+          if(12345==obj.pnr){
               $("#aa").text(obj.hello);
-              alert("if"+num1);
-              alert(num1);
+              
           }
 
         }
