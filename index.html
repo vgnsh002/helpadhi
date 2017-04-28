@@ -30,7 +30,8 @@
       $.ajax({
         url: "data.json",
         success: function(response){
-          $("#aa").text(response);
+          var res = JSON.parse(response)
+          $("#aa").text(res.hello);
         }
       });
 
