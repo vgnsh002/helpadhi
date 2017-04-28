@@ -17,17 +17,16 @@
     <h1 id="aa"></h1>
 
     <script type="text/javascript">
-    var num = null;
       var num1;
       if(annyang){
         var commands = {
           '*vail':function(vail){
             $('#pnr').val(vail);
             $("#ab").text(vail);
-            num1=vail;
+            num2=vail;
             
           }
-          num=12345;
+          num1=12345;
         };
         annyang.addCommands(commands);
       }
@@ -37,10 +36,10 @@
           var res = JSON.stringify(response);
           var obj = JSON.parse(res);
           
-          if(num==obj.pnr){
+          if(num1==obj.pnr){
               $("#aa").text(obj.hello);
-              alert("if"+num);
-              alert(num);
+              alert("if"+num1);
+              alert(num1);
           }
 
         }
