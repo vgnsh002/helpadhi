@@ -32,8 +32,8 @@
         success: function(response){
           var res = JSON.stringify(response);
           var obj = JSON.parse(res);
-          
-          if(12345==obj.pnr){
+          var cont = $("#pnr").val();
+          if(val==obj.pnr){
               $("#aa").text(obj.hello);
               
           }
