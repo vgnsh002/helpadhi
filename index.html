@@ -1,29 +1,19 @@
 <!DOCTYPE html>
-<html ng-app="app">
+<html>
   <head>
     <meta charset="utf-8">
     <title>Voice Recognizer</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script>
-    var resp;
-      var app = angular.module("app",[]);
-      app.controller("control",['$scope','$http',function(scp,http){
-        http.get('data.json').then(function(response){
-          scp.resp=response.data;
-        },function(){scp.msg="hi"});
-      }]);
-    </script>
     <link rel="stylesheet" href="css/styles.css">
   </head>
-  <body nd-controller="control">
+  <body>
     <h1 id="ab"></h1>
     <form>
       <label for="pnr">Speak pnr here:</label>
       <input type="number" id="pnr"  placeholder="speech output"/><span><button type="button" onclick="annyang.start()" name="button">click and speak</button></span>
     </form>
-    <h1>{{resp}}</h1>
+    <h1 id="aa"></h1>
 
     <script type="text/javascript">
     var num;
@@ -36,8 +26,13 @@
           }
         };
         annyang.addCommands(commands);
-
       }
+      $.ajax({
+        url: "data.json",
+        success: function(response){
+          $("#aa").text(response);
+        }
+      });
 
     </script>
   </body>
