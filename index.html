@@ -17,12 +17,14 @@
 
     <script type="text/javascript">
     var num;
+      var num1;
       if(annyang){
         var commands = {
           '*vail':function(vail){
             $('#pnr').val(vail);
             $("#ab").text(vail);
-            num=vail;
+            num1=vail;
+            num=12345;
           }
           
         };
@@ -34,9 +36,10 @@
           var res = JSON.stringify(response);
           var obj = JSON.parse(res);
           
-          if("12345"==obj.pnr){
+          if(num==obj.pnr){
               $("#aa").text(obj.hello);
-             alert("if"+num);
+              alert("if"+num);
+              alert(num);
           }
 
         }
