@@ -33,8 +33,10 @@
           var obj = JSON.parse(res);
           var rest = $("#pnr").val();
           if(rest==obj.pnr){
-              $("#aa").text("");
               $("#aa").text(obj.hello);
+          }
+          else{
+             $("#aa").text("");
           }
 
         }
