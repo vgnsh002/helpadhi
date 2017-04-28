@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/styles.css">
   </head>
   <body>
-    <h1>Welcome Peasents!!!</h1>
+    <h1>Welcome Peasents!!!asd</h1>
     <h1 id="ab"></h1>
     <form>
       <label for="pnr">Speak pnr here:</label>
@@ -33,6 +33,7 @@
           var res = JSON.stringify(response);
           var obj = JSON.parse(res);
           var cont = $("#pnr").val();
+          alert(cont);
           if(cont==obj.pnr){
               $("#aa").text(obj.hello);
               
