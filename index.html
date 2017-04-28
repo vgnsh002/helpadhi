@@ -22,25 +22,27 @@
         var commands = {
           '*vail':function(vail){
             $('#pnr').val(vail);
-            $("#ab").text(vail);
-            cont = $("#pnr").val();            
+            $("#ab").text(vail);          
           }
         };
-        annyang.addCommands(commands);
-      }
-      $.ajax({
+        annyang.addCallback('end', function () {
+           $.ajax({
         url: "data.json",
         success: function(response){
           var res = JSON.stringify(response);
           var obj = JSON.parse(res);
-          alert(cont);
-          if(cont==obj.pnr){
+          var rest = $("#pnr").val();
+          if(rest==obj.pnr){
               $("#aa").text(obj.hello);
-              
           }
 
         }
       });
+        });
+        annyang.addCommands(commands);
+        
+      }
+     
 
     </script>
   </body>
