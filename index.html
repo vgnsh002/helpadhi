@@ -27,7 +27,6 @@
           
         };
         annyang.addCommands(commands);
-        alert(num);
       }
       $.ajax({
         url: "data.json",
@@ -35,7 +34,7 @@
           var res = JSON.stringify(response);
           var obj = JSON.parse(res);
           
-          if(num==obj.pnr){
+          if(12345==obj.pnr){
               $("#aa").text(obj.hello);
              alert("if"+num);
           }
