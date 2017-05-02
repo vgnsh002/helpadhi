@@ -10,7 +10,7 @@
   </head>
   <body align="center">
       <img src="images/logo.png" alt="logo">
-    <h2>Welcome Idiot</h2>
+    <h2>Welcome to American Airlines!!</h2>
 
     <form class="ab form-group">
       <label for="pnr">Voice your PNR:</label>
@@ -24,7 +24,7 @@
     <h3 id="arr"></h3>
     <script type="text/javascript">
       var cont;
-     
+
       if(annyang){
         var commands = {
           '*vail':function(vail){
@@ -48,7 +48,7 @@
             $("#aa").text(obj.hello);
           }
           else if (user=="show") {
-            $('#arr').text("Your flight's expected arrival time is "+obj.arrival+". For further queries contact Help Desk");
+            $('#arr').text(obj.arrival);
 
           }else{
             $("#aa").text("Check Your PNR");
