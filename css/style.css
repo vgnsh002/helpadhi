@@ -1,16 +1,19 @@
 .abc{
-  color:black;
-}
-.ab{
-  margin-left: 350px;
+  color:#4caf50;
 }
 img {
     width: 100%;
     height: auto;
 }
+#aa{
+  color:black;
+}
+#pnr{
+  margin:0 auto;
+}
 body{
   margin:0;
-  background: #1565C0;
+  background:#f7f7f9;
   background-image: url(../images/american_airlines.jpg);
   background-size: stretch;
   background-repeat: no-repeat;
@@ -44,6 +47,11 @@ body{
 
 /*for phones */
 @media only screen and (min-width : 250px) and (max-width : 667px){
+  body{
+  margin:0;
+  background: #f7f7f9;
+  background-image:none;
+  }
   .abc{
     margin:0 auto;
     font-size:25px;
@@ -66,17 +74,34 @@ body{
     font-size: 20px;
     margin-top: 4%;
   }
+  #aa{
+  color:black;
+}
 }
 /* for ipads */
 @media only screen and (min-width : 668px) and (max-width : 1024px){
   .abc{
-    margin-left: 100px;
+    margin:0 auto;
+    font-size:25px;
+    padding:5%;
   }
   .ab{
-    margin-left: 100px;
+    margin:0 auto;
   }
   .form-control{
-    width:500px;
+    width:100%;
   }
+  .button{
+    width:100%;
+  }
+  #pnr{
+    padding: 5%;
+    margin-top: 5%;
+  }
+  label{
+    font-size: 20px;
+    margin-top: 4%;
+  }
+
 
 }
