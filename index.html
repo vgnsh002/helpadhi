@@ -11,24 +11,29 @@
   <body align="center">
       <img src="images/logo.png" alt="logo">
     <h2>Welcome to American Airlines!!</h2>
-    <h1 id="ab"></h1>
+
     <form class="ab form-group">
-      <label for="pnr">Speak PNR No. here:</label>
-      <input class="form-control text-center" type="text" id="pnr" placeholder="speech output"/>
+      <label for="pnr">Voice your PNR:</label>
+      <input class="form-control text-center" type="text" id="pnr" placeholder="Your PNR appears here"/>
+
         <br>
-        <button class="button" type="button" onclick="annyang.start({ autoRestart: false, continuous: false })" name="button">Tap to Speak</button>
+      <button class="button" type="button" onclick="annyang.start({ autoRestart: false, continuous: false })" name="button">Tap to Speak</button>
     </form>
     <h2 class="abc">Find the status of Your flight</h2>
     <h2 id="aa"></h2>
-
+    <h3 id="arr"></h3>
     <script type="text/javascript">
       var cont;
+      var obj=null;
       if(annyang){
         var commands = {
           '*vail':function(vail){
             $('#pnr').val(vail);
-            $("#ab").text(vail);
+          },
+          'Show details':function(){
+            $('#arr').val("Your flight's expected arrival time is. For further queries contact Help Desk");
           }
+
         };
         annyang.addCallback('end', function () {
            $.ajax({
@@ -38,10 +43,10 @@
           var obj = JSON.parse(res);
           var rest = $("#pnr").val();
           if(rest==obj.pnr){
-              $("#aa").text(obj.hello);
+            $("#aa").text(""+obj.hello+" "<br>" For further details tap and say *Show Details*");
           }
           else{
-             $("#aa").text("Check YOur PNR");
+            $("#aa").text("Check Your PNR");
           }
         }
       });
