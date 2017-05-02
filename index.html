@@ -11,7 +11,7 @@
   </head>
   <body align="center">
       <img src="images/logo.png" alt="logo">
-    <h2>Welcome</h2>
+    <h2>Welcome ghghghghg</h2>
 
     <form class="ab form-group">
       <label for="pnr">Voice your PNR:</label>
@@ -32,7 +32,7 @@
             $('#pnr').val(vail);
             var vpnr=vail;
             $('#user').val(vail);
-            uservoice.push(vpnr);
+
           },
           'show *vail1':function(vail1){
             $('#user').val(vail1);
@@ -50,6 +50,7 @@
           if(rest==obj.pnr){
             $("#arr").text("");
             $("#aa").text(obj.hello);
+            uservoice.push(rest);
 
           }
           else if (user=="show") {
@@ -57,6 +58,10 @@
               $("#aa").text("");
               $('#arr').text("Your flight's expected arrival time is "+obj.arrival+". For further queries contact Help Desk");
               uservoice.pop();
+            }
+            else {
+              $("#aa").text("");
+              $('#arr').text("No PNR input/Invalid PNR");
             }
 
           }else{
