@@ -1,271 +1,82 @@
-@import url(http://weloveiconfonts.com/api/?family=fontawesome);
-
-/* fontawesome */
-[class*="fontawesome-"]:before {
-  font-family: 'FontAwesome', sans-serif;
+.abc{
+  color:black;
 }
-
-body,
-div,
-ul,
-li,
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  padding:0;
-  margin:0;
-  font-family: "Roboto", sans-serif;
+.ab{
+  margin-left: 350px;
 }
-
-.clear-fix {
-  overflow: auto;
-}
-
-.education-entry,
-.work-entry,
-.project-entry {
-  padding: 0 5%;
-}
-
-h1 {
-  font-size: 40px;
-  color: #f5a623;
-  line-height: 48px;
-  display: inline;
-}
-
-h2 {
-  font-weight: bold;
-  font-size: 24px;
-  color: #999;
-  line-height: 29px;
-  padding: 10px;
-}
-
-h3 {
-  font-style: italic;
-  font-size: 20px;
-  color: #000;
-  line-height: 22px;
-}
-
-h4 {
-  font-weight: bold;
-  font-size: 14px;
-  color: #4a4a4a;
-  line-height: 17px;
-}
-
-h2,
-h3,
-h4,
-h5 {
-  padding:10px 5%;
-
-}
-
-.date-text {
-  font-style: italic;
-  font-size: 14px;
-  color: #999;
-  line-height: 16px;
-  float: left;
-}
-
-.location-text {
-  font-style: italic;
-  font-size: 14px;
-  color: #999;
-  line-height: 16px;
-  float: right;
-
-}
-
-p {
-  font-size: 14px;
-  color: #333;
-  line-height: 21px;
-}
-
-a {
-  color: #1199c3;
-  text-decoration: none;
-  margin-top: 10px;
-  display: block;
-}
-
-.welcome-message {
-  font-style: italic;
-  font-size: 18px;
-  color: #f3f3f3;
-  line-height: 28px;
-}
-
-#skills-h3 {
-  color: #f5ae23;
-  display: none;
-  padding-left:10px;
-}
-
-.orange {
-  background-color: #f5ae23;
-}
-
-.orange-text {
-  color: #f5ae23;
-}
-
-.white-text {
-  font-weight: bold;
-  color: #fff;
-}
-
-.gray {
-  background-color: #f3f3f3;
-  padding-bottom: 10px;
-  clear:both;
-}
-
-.dark-gray {
-  background-color: #4a4a4a;
-}
-
-/* TODO: Replace with image later */
-#header {
-  background-color: #484848;
-}
-
-.flex-box {
-  display: -webkit-flex;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  padding: 10px;
-}
-
-.flex-column {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  padding: 10px;
-}
-
-.center-content {
-  padding: 2.5% 5%;
-}
-
-ul {
-  list-style-type: none;
-}
-
-.biopic {
-  float: left;
-  padding: 10px;
-  width: 200px;
-  display: none;
-}
-
 img {
-  padding: 10px;
+    width: 100%;
+    height: auto;
+}
+body{
+  margin:0;
+  background: #1565C0;
+  background-image: url(../images/american_airlines.jpg);
+  background-size: stretch;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.form-control{
+  width:500px;
 }
 
-span {
-  padding: 5px;
-}
-
-#lets-connect {
+.button {
+  display: inline-block;
+  padding: 15px 25px;
+  cursor: pointer;
   text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 7px;
+  /*box-shadow: 0 9px #999;*/
 }
 
-/* Media queries to handle various device widths */
+.button:hover {background-color: #3e8e41}
 
-@media only screen and (max-width: 1024px) {
-  #lets-connect {
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+/*for phones */
+@media only screen and (min-width : 250px) and (max-width : 667px){
+  .abc{
+    margin:0 auto;
+    font-size:25px;
+    padding:5%;
+  }
+  .ab{
+    margin:0 auto;
+  }
+  .form-control{
+    width:100%;
+  }
+  .button{
+    width:100%;
+  }
+  #pnr{
+    padding: 5%;
     margin-top: 5%;
   }
-}
-
-@media only screen and (max-width: 550px) {
-    .burger-nav {
-        height: 40px;
-        width: 100%
-        display: block;
-        cursor: pointer;
-        background: url(../images/burger.png) no-repeat 98% center #505050;
-    }    
-    div .center-content {
-        width: 100%;
-        padding:0;
-    }
-    div #topContacts {
-        overflow: hidden;
-        height: 0;
-    }
-    div #topContacts.open {
-        height:auto;
-    }
-    div #topContacts span {
-        float: none;
-        width: 100%;
-        margin: 0;
-        border-bottom: 3px solid #404040;
-        display: block;
-        padding: 10px;
-        text-align: center;
-    }
-
-}
-
-@media only screen and (max-width: 900px) {
-  .biopic {
-    width: 175px;
+  label{
+    font-size: 20px;
+    margin-top: 4%;
   }
 }
-
-@media only screen and (max-width: 750px) {
-  #lets-connect {
-    margin-top: 10%;
+/* for ipads */
+@media only screen and (min-width : 668px) and (max-width : 1024px){
+  .abc{
+    margin-left: 100px;
   }
-  .biopic {
-    width: 150px;
+  .ab{
+    margin-left: 100px;
   }
-  .welcome-message {
-    display: none;
+  .form-control{
+    width:500px;
   }
-}
 
-#map {
-  display: block;
-  height: 100%;
-  margin: 0 5%;
-}
-
-#mapDiv {
-  height: 400px;
-  width: 100%;
-  padding-bottom: 5%;
-}
-
-@media only screen and (min-width: 750px) {
-  #skills-h3,
-  .biopic {
-    display: block;
-  }
-}
-
-button {
-  color: #000;
-  background: #fff;
-  padding: 1em;
-  margin-left: 45%;
-  box-shadow: 3px 2px 5px;
-}
-
-.onlineHead {
-  padding-left: 0px;
 }
