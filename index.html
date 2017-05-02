@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Voice IT !</title>
+    <title>Voice Recognizer</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
@@ -11,11 +11,12 @@
   </head>
   <body align="center">
       <img src="images/logo.png" alt="logo">
-    <h2>Welcome !</h2>
+    <h2>Welcome!</h2>
 
     <form class="ab form-group">
-      <label for="pnr">Voice Form</label>
+      <label for="pnr">Voice your PNR:</label>
       <input class="form-control text-center" type="text" id="user" placeholder="Your Speech Output"/>
+      <h3 id="help"></h3>
       <input class="form-control text-center" type="number" id="pnr" placeholder="Your PNR appears here"/>
       <br>
       <button class="button" type="button" onclick="annyang.start({ autoRestart: false, continuous: false })" name="button">Tap to Speak</button>
@@ -51,6 +52,7 @@
             $("#arr").text("");
             $("#aa").text(obj.hello);
             uservoice.push(rest);
+            $("#help").text("Tap the button and Say **SHOW** to display more details")
 
           }
           else if (user=="show") {
@@ -58,16 +60,18 @@
               $("#aa").text("");
               $('#arr').text("Your flight's expected arrival time is "+obj.arrival+". For further queries contact Help Desk");
               uservoice.pop();
+              $("#help").text("");
             }
             else {
               $("#aa").text("");
               $('#arr').text("No PNR input/Invalid PNR");
+              $("#help").text("");
             }
 
           }else{
             $("#arr").text("");
             $("#aa").text("Check Your PNR");
-            uservoice.pop();
+            $("#help").text("");
           }
         }
       });
