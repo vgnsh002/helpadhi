@@ -12,7 +12,7 @@
   </head>
   <body align="center">
       <img src="images/logo.png" alt="logo">
-    <h2>Welcome</h2>
+    <h2>Welcome !</h2>
 
     <form class="ab form-group">
       <label for="pnr">Voice your PNR:</label>
@@ -55,7 +55,7 @@
             $("#arr").text("");
             $("#aa").text(obj.hello);
             uservoice.push(rest);
-            $("#help").text("Tap the button and Say **SHOW** to display more details")
+            $("#help").text("Tap the button and Say *SHOW* to display more details")
 
           }
           else if (user=="show") {
@@ -64,7 +64,7 @@
               $('#arr').text("Your flight's expected arrival time is "+obj.arrival+". For further queries contact Help Desk");
               uservoice.pop();
               $("#help").text("");
-              $("body").append("<input onclick='responsiveVoice.speak($(""#arr"").text());' type='button' value='🔊 Play' />")
+            
             }
             else {
               $("#aa").text("");
