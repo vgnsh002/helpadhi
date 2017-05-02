@@ -5,71 +5,61 @@
     <title>Voice Recognizer</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-     <script src='https://code.responsivevoice.org/responsivevoice.js'></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body align="center">
       <img src="images/logo.png" alt="logo">
-    <h2>Welcome ! </h2>
+    <h2>Welcome</h2>
 
     <form class="ab form-group">
-      <label for="pnr">Voice Field:</label>
+      <label for="pnr">Voice your PNR:</label>
       <input class="form-control text-center" type="text" id="user" placeholder="Your Speech Output"/>
       <input class="form-control text-center" type="number" id="pnr" placeholder="Your PNR appears here"/>
       <br>
       <button class="button" type="button" onclick="annyang.start({ autoRestart: false, continuous: false })" name="button">Tap to Speak</button>
     </form>
     <h2 class="abc">Find the status of Your flight</h2>
-    <h2 id="pnrfield"></h2>
+    <h2 id="aa"></h2>
     <h3 id="arr"></h3>
-    <input onclick='responsiveVoice.speak($("#arr").text());' type='button' value='🔊 Play' />
     <script type="text/javascript">
       var cont;
-      var pnr;
-      var user;
+
       if(annyang){
         var commands = {
           '*vail':function(vail){
-            pnr=$('#pnr').val(vail);
-            user=$('#user').val(vail);
-         $.ajax({
-         url: "data.json",
-         success: function(response){
-           var res = JSON.stringify(response);
-           var obj = JSON.parse(res);
-           if(user==obj.pnr){
-             $("#pnrfield").text(obj.hello);
-           }
-           else{
-             $("#pnrfield").text("Check Your PNR");
-           }
-         }
-       });
+            $('#pnr').val(vail);
+            $('#user').val(vail);
           },
           'show *vail1':function(vail1){
-           $('#user').val(vail1);
-           $.ajax({
-           url: "data.json",
-           success: function(response){
-             var res = JSON.stringify(response);
-             var obj = JSON.parse(res);
-             if (user=="show") {
-               if(pnr==obj.pnr){
-                 $('#arr').text("Your flight's expected arrival time is "+obj.arrival+". For further queries contact Help Desk");
-               }
-               else{
-                 $("#arr").text("No PNR/Invalid PNR");
-               }
-             }
+            $('#user').val(vail1);
           }
 
+        };
+        annyang.addCallback('end', function () {
+           $.ajax({
+        url: "data.json",
+        success: function(response){
+          var res = JSON.stringify(response);
+          var obj = JSON.parse(res);
+          var rest = $("#pnr").val();
+          var user =$("#user").val();
+          if(rest==obj.pnr){
+            $("#aa").text(obj.hello);
+          }
+          else if (user=="show") {
+            $('#arr').text("Your flight's expected arrival time is "+obj.arrival+". For further queries contact Help Desk");
+
+          }else{
+            $("#aa").text("Check Your PNR");
+          }
+        }
+      });
         });
         annyang.addCommands(commands);
+
       }
-    }
-  }
 
     </script>
   </body>
