@@ -11,7 +11,7 @@
   </head>
   <body align="center">
       <img src="images/logo.png" alt="logo">
-    <h2>Welcome</h2>
+    <h2>Welcome!</h2>
 
     <form class="ab form-group">
       <label for="pnr">Voice your PNR:</label>
@@ -46,10 +46,14 @@
           var rest = $("#pnr").val();
           var user =$("#user").val();
           if(rest==obj.pnr){
+            $("#arr").text("");
             $("#aa").text(obj.hello);
+            
           }
           else if (user=="show") {
+            $("#aa").text("");
             $('#arr').text("Your flight's expected arrival time is "+obj.arrival+". For further queries contact Help Desk");
+            
 
           }else{
             $("#aa").text("Check Your PNR");
