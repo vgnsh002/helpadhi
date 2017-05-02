@@ -24,25 +24,15 @@
     <h2 id="aa"></h2>
     <h3 id="arr"></h3>
     <script type="text/javascript">
-      var cont;
-      var glo;
-
+      
+ 
       if(annyang){
         var commands = {
-          '*vail':function(vail){
-            $('#pnr').val(vail);
-          },
+          
           '*vail1':function(vail1){
             $('#user').val(vail1);
             var user=$('#user').val(vail1);
-            if (user=="show") {
-              $('#arr').text("Your flight's expected arrival time is "+glo+". For further queries contact Help Desk");
-
-            }else{
-              $("#aa").text("Check Your PNR");
-            }
-
-          }
+          
 
         };
         annyang.addCallback('end', function () {
@@ -52,10 +42,14 @@
           var res = JSON.stringify(response);
           var obj = JSON.parse(res);
           var rest = $("#pnr").val();
-        
-          if(rest==obj.pnr){
-            $("#aa").text(obj.hello);
-            glo=obj.arrival
+          var user=$('#user').val(vail1);
+           if (user=="show") {
+              $('#arr').text("Your flight's expected arrival time is "+obj.arrival+". For further queries contact Help Desk");
+
+            }else{
+              $("#aa").text("Check Your PNR");
+            }
+
           }
 
         }
