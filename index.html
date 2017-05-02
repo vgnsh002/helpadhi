@@ -54,9 +54,10 @@
 
           }
           else if (user=="show") {
-            $("#aa").text("");
-            $('#arr').text("Your flight's expected arrival time is "+obj.arrival+". For further queries contact Help Desk");
-
+            if (uservoice[0]==obj.pnr) {
+              $("#aa").text("");
+              $('#arr').text("Your flight's expected arrival time is "+obj.arrival+". For further queries contact Help Desk");
+            }
 
           }else{
             $("#aa").text("Check Your PNR");
