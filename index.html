@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Voice IT !</title>
+    <title>Voice Recognizer</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
      <script src='https://code.responsivevoice.org/responsivevoice.js'></script>
@@ -12,7 +12,7 @@
   </head>
   <body align="center">
       <img src="images/logo.png" alt="logo">
-    <h2>Welcome</h2>
+    <h2>Welcome!</h2>
 
     <form class="ab form-group">
       <label for="pnr">Voice your PNR:</label>
@@ -27,13 +27,13 @@
     <input onclick='responsiveVoice.speak($("#arr").text());' type='button' value='🔊 Play' />
     <script type="text/javascript">
       var cont;
-      var pnr;
-      
+
+
 
       if(annyang){
         var commands = {
           '*vail':function(vail){
-            pnr=$('#pnr').val(vail);
+            $('#pnr').val(vail);
             $('#user').val(vail);
 
           },
@@ -49,6 +49,7 @@
           var res = JSON.stringify(response);
           var obj = JSON.parse(res);
           var user =$("#user").val();
+          var pnr = $("#pnr").val();
           if(user==obj.pnr){
             $("#aa").text(obj.hello);
           }
