@@ -12,7 +12,7 @@
   </head>
   <body align="center">
       <img src="images/logo.png" alt="logo">
-    <h2>Welcome @</h2>
+    <h2>Welcome ! @</h2>
 
     <form class="ab form-group">
       <label for="pnr">Voice Field:</label>
@@ -27,8 +27,8 @@
     <input onclick='responsiveVoice.speak($("#arr").text());' type='button' value='🔊 Play' />
     <script type="text/javascript">
       var cont;
-      var pnr=  $('#pnr').val();
-      var user =$("#user").val();
+      var pnr;
+      var user;
       var voice1;
       var voice2;
       if(annyang){
@@ -56,7 +56,7 @@
              }
           }
 
-        };
+        });
         annyang.addCallback('end', function () {
            $.ajax({
         url: "data.json",
