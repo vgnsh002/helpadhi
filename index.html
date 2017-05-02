@@ -19,13 +19,13 @@
       <input class="form-control text-center" type="text" id="user" placeholder="Your Speech Output"/>
       <input class="form-control text-center" type="number" id="pnr" placeholder="Your PNR appears here"/>
       <br>
-      <h5 id="help"></h5>
+      <h6 id="help"></h6>
       <button class="button" type="button" onclick="annyang.start({ autoRestart: false, continuous: false })" name="button">Tap to Speak</button>
     </form>
     <h2 class="abc">Find the status of Your flight</h2>
     <h2 id="aa"></h2>
     <h3 id="arr"></h3>
-    <input onclick='responsiveVoice.speak($("#arr").text());' type='button' value='🔊 Play' />
+
 
     <script type="text/javascript">
       var uservoice=[];
@@ -64,6 +64,7 @@
               $('#arr').text("Your flight's expected arrival time is "+obj.arrival+". For further queries contact Help Desk");
               uservoice.pop();
               $("#help").text("");
+              $("body").append("<input onclick='responsiveVoice.speak($(""#arr"").text());' type='button' value='🔊 Play' />")
             }
             else {
               $("#aa").text("");
