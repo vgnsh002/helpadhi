@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Voice Recognizer</title>
+    <title>Voice IT !</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
      <script src='https://code.responsivevoice.org/responsivevoice.js'></script>
@@ -15,7 +15,7 @@
     <h2>Welcome</h2>
 
     <form class="ab form-group">
-      <label for="pnr">Voice your PNR:</label>
+      <label for="pnr">Voice Field:</label>
       <input class="form-control text-center" type="text" id="user" placeholder="Your Speech Output"/>
       <input class="form-control text-center" type="number" id="pnr" placeholder="Your PNR appears here"/>
       <br>
@@ -28,6 +28,7 @@
     <script type="text/javascript">
       var cont;
       var pnr=  $('#pnr').val();
+      var user =$("#user").val();
 
 
 
@@ -49,23 +50,22 @@
         success: function(response){
           var res = JSON.stringify(response);
           var obj = JSON.parse(res);
-          var user =$("#user").val();
-          if(user==obj.pnr){
-            $("#aa").text(obj.hello);
-          }
-          else if (user=="show") {
-            if(pnr==obj.pnr){
-              $('#arr').text("Your flight's expected arrival time is "+obj.arrival+". For further queries contact Help Desk");
-            }
-            else{
-              $("#arr").text("No PNR/Invalid PNR");
-            }
-          }
-          else{
-            $("#aa").text("Check Your PNR");
-          }
         }
       });
+        if(user==obj.pnr){
+          $("#aa").text(obj.hello);
+                }
+        else if (user=="show") {
+            if(pnr==obj.pnr){
+                $('#arr').text("Your flight's expected arrival time is "+obj.arrival+". For further queries contact Help Desk");
+              }
+            else{
+                $("#arr").text("No PNR/Invalid PNR");
+                }
+          }
+        else{
+            $("#aa").text("Check Your PNR");
+            }
         });
         annyang.addCommands(commands);
 
