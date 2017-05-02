@@ -11,7 +11,7 @@
   </head>
   <body align="center">
       <img src="images/logo.png" alt="logo">
-    <h2>Welcome idiot</h2>
+    <h2>Welcome</h2>
 
     <form class="ab form-group">
       <label for="pnr">Voice your PNR:</label>
@@ -24,15 +24,17 @@
     <h2 id="aa"></h2>
     <h3 id="arr"></h3>
     <script type="text/javascript">
-      
- 
+      var cont;
+
       if(annyang){
         var commands = {
-          
-          '*vail1':function(vail1){
+          '*vail':function(vail){
+            $('#pnr').val(vail);
+            $('#user').val(vail);
+          },
+          'show *vail1':function(vail1){
             $('#user').val(vail1);
-            var user=$('#user').val(vail1);
-          
+          }
 
         };
         annyang.addCallback('end', function () {
@@ -42,16 +44,16 @@
           var res = JSON.stringify(response);
           var obj = JSON.parse(res);
           var rest = $("#pnr").val();
-          var user=$('#user').val(vail1);
-           if (user=="show") {
-              $('#arr').text("Your flight's expected arrival time is "+obj.arrival+". For further queries contact Help Desk");
-
-            }else{
-              $("#aa").text("Check Your PNR");
-            }
-
+          var user =$("#user").val();
+          if(rest==obj.pnr){
+            $("#aa").text(obj.hello);
           }
+          else if (user=="show") {
+            $('#arr').text("Your flight's expected arrival time is "+obj.arrival+". For further queries contact Help Desk");
 
+          }else{
+            $("#aa").text("Check Your PNR");
+          }
         }
       });
         });
