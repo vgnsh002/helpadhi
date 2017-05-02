@@ -47,11 +47,11 @@
           var user =$("#user").val();
           if(rest==obj.pnr){
             $("#aa").text(obj.hello);
+            if (user=="show") {
+              $('#arr').text("Your flight's expected arrival time is "+obj.arrival+". For further queries contact Help Desk");
+            }
           }
-          else if (user=="show") {
-            $('#arr').text("Your flight's expected arrival time is "+obj.arrival+". For further queries contact Help Desk");
-
-          }else{
+        else{
             $("#aa").text("Check Your PNR");
           }
         }
