@@ -11,7 +11,7 @@
   </head>
   <body align="center">
       <img src="images/logo.png" alt="logo">
-    <h2>Welcome</h2>
+    <h2>Welcome buddy</h2>
 
     <form class="ab form-group">
       <label for="pnr">Voice your PNR:</label>
@@ -25,6 +25,7 @@
     <h3 id="arr"></h3>
     <script type="text/javascript">
       var cont;
+      var glo;
 
       if(annyang){
         var commands = {
@@ -34,6 +35,14 @@
           },
           'show *vail1':function(vail1){
             $('#user').val(vail1);
+            var user=$('#user').val(vail1);
+            if (user=="show") {
+              $('#arr').text("Your flight's expected arrival time is "+glo+". For further queries contact Help Desk");
+
+            }else{
+              $("#aa").text("Check Your PNR");
+            }
+
           }
 
         };
@@ -44,16 +53,12 @@
           var res = JSON.stringify(response);
           var obj = JSON.parse(res);
           var rest = $("#pnr").val();
-          var user =$("#user").val();
+        
           if(rest==obj.pnr){
             $("#aa").text(obj.hello);
+            glo=obj.arrival
           }
-          if (user=="show") {
-            $('#arr').text("Your flight's expected arrival time is "+obj.arrival+". For further queries contact Help Desk");
 
-          }else{
-            $("#aa").text("Check Your PNR");
-          }
         }
       });
         });
