@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Voice IT !</title>
+    <title>Voice Recognizer</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
      <script src='https://code.responsivevoice.org/responsivevoice.js'></script>
@@ -12,7 +12,7 @@
   </head>
   <body align="center">
       <img src="images/logo.png" alt="logo">
-    <h2>Welcome ! !</h2>
+    <h2>Welcome @</h2>
 
     <form class="ab form-group">
       <label for="pnr">Voice Field:</label>
@@ -22,22 +22,38 @@
       <button class="button" type="button" onclick="annyang.start({ autoRestart: false, continuous: false })" name="button">Tap to Speak</button>
     </form>
     <h2 class="abc">Find the status of Your flight</h2>
-    <h2 id="aa"></h2>
+    <h2 id="pnrfield"></h2>
     <h3 id="arr"></h3>
     <input onclick='responsiveVoice.speak($("#arr").text());' type='button' value='🔊 Play' />
     <script type="text/javascript">
       var cont;
       var pnr=  $('#pnr').val();
       var user =$("#user").val();
+      var voice1;
+      var voice2;
       if(annyang){
         var commands = {
           '*vail':function(vail){
-            pnr=$('#pnr').val(vail);
-            $('#user').val(vail);
-
+            voice1=vail;
+            pnr=$('#pnr').val(voice1);
+            $('#user').val(voice1);
           },
           'show *vail1':function(vail1){
-            $('#user').val(vail1);
+            voice2=vail1;
+            $('#user').val(voice2);
+            $.ajax({
+           url: "data.json",
+           success: function(response){
+             var res = JSON.stringify(response);
+             var obj = JSON.parse(res);
+             if (user=="show") {
+               if(pnr==obj.pnr){
+                 $('#arr').text("Your flight's expected arrival time is "+obj.arrival+". For further queries contact Help Desk");
+               }
+               else{
+                 $("#arr").text("No PNR/Invalid PNR");
+               }
+             }
           }
 
         };
@@ -47,26 +63,14 @@
         success: function(response){
           var res = JSON.stringify(response);
           var obj = JSON.parse(res);
-          runit();
+          if(user==obj.pnr){
+            $("#pnrfield").text(obj.hello);
+          }
+          else{
+            $("#pnrfield").text("Check Your PNR");
+          }
         }
       });
-        var runit=function () {
-          if(user==obj.pnr){
-            $("#aa").text(obj.hello);
-                  }
-          else if (user=="show") {
-              if(pnr==obj.pnr){
-                  $('#arr').text("Your flight's expected arrival time is "+obj.arrival+". For further queries contact Help Desk");
-                }
-              else{
-                  $("#arr").text("No PNR/Invalid PNR");
-                  }
-            }
-          else{
-              $("#aa").text("Check Your PNR");
-              }
-
-        }
         });
         annyang.addCommands(commands);
 
