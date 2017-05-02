@@ -11,7 +11,7 @@
   </head>
   <body align="center">
       <img src="images/logo.png" alt="logo">
-    <h2>Welcomewewe2we23</h2>
+    <h2>Welcome</h2>
 
     <form class="ab form-group">
       <label for="pnr">Voice your PNR:</label>
@@ -30,7 +30,7 @@
         var commands = {
           '*vail':function(vail){
             $('#pnr').val(vail);
-            var vpnr=$('#pnr').val(vail);
+            var vpnr=vail;
             $('#user').val(vail);
             uservoice.push(vpnr);
             alert(uservoice[0]);
