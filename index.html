@@ -22,15 +22,9 @@
     $.ajax({
     url: "data.json",
     success: function(response){
-     $('#response').text("response:"+response+".datatype is:"+typeof(response))
-      var res = JSON.stringify(response);
-     $('#res').text("RES after stringify:"+res+".datatype is:"+typeof(res))
-      var obj = JSON.parse(res);
-     $('#obj').text("OBJ after parsing:"+obj+".datatype is:"+typeof (obj))
-          var bool = JSON.parse(response.boolean);
-          var boolVal=response.boolean
-      $('#BOOl').text("Bool after parsing:"+bool+".datatype is:"+typeof (bool))
-      $('# booLean').text("Bool value:"+boolVal+".and datatype is:"+typeof (boolVal))
+    var bool = response.boo;
+    var boolVal=response.boo;
+      $('#BOOl').text("Bool value is:"+bool+".datatype is:"+typeof (bool));
       }
   });
     </script>
