@@ -13,11 +13,11 @@
   <body>
 
     <h1>Following formats</h1>
-    <h4 id="response">response</h2>
-    <h4 id="res">RES</h2>
-    <h4 id="obj">OBJ</h2>
-    <h1 id="booLean">BOOLEAN</h2>
     <h1 id=BOOl></h1>
+    <h4 id="BOOlVal">BOOlVal</h2>
+    <h4 id="BOOSTRING">BOOSTRING</h2>
+    <h4 id="BOOlNull">BOOlNull</h2>
+    
     <script type="text/javascript">
     $.ajax({
     url: "data.json",
@@ -30,7 +30,7 @@
       $('#BOOl').text("Bool value after stringify is:"+bool+".datatype is:"+typeof (bool));
        $('#BOOlVal').text("Bool value WITHOUT stringify is:"+boolVal+".datatype is:"+typeof (boolVal));
        $('#BOOSTRING').text("BoolS value STRINGED:"+boolValstring+".datatype is:"+typeof (boolValstring));
-       $('#BOOl').text("BoolNULL value:"+boolValnull+".datatype is:"+typeof (boolValnull));
+       $('#BOOlNull').text("BoolNULL value:"+boolValnull+".datatype is:"+typeof (boolValnull));
       
       }
   });
