@@ -6,9 +6,9 @@
 
       <meta charset="utf-8">
       <title>Voice Recognizer</title>
-    
+
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-       
+
   </head>
   <body>
 
@@ -17,21 +17,21 @@
     <h4 id="BOOlVal">BOOlVal</h4>
     <h4 id="BOOSTRING">BOOSTRING</h4>
     <h4 id="BOOlNull">BOOlNull</h4>
-    
+
     <script type="text/javascript">
     $.ajax({
     url: "data.json",
-    success: function(objects){
-     
-    var bool = JSON.stringify(objects.boo);
-    var boolVal=objects.boo;
-    var boolValstring=objects.booS;
-    var boolValnull=objects.boonull;
-      $('#BOOl').text("Bool value after stringify is:"+bool+".datatype is:"+typeof (bool));
-       $('#BOOlVal').text("Bool value WITHOUT stringify is:"+boolVal+".datatype is:"+typeof (boolVal));
+    success: function(res){
+console.log(typeof(res.objects[0].booS));
+    var boolVal=res.objects[0].boo;
+    console.log(boolVal)
+    var boolValstring=res.objects[0].booS;
+    var boolValnull=res.objects[0].boonull;
+
+       $('#BOOlVal').text("Bool value is:"+boolVal+".datatype is:"+typeof (boolVal));
        $('#BOOSTRING').text("BoolS value STRINGED:"+boolValstring+".datatype is:"+typeof (boolValstring));
        $('#BOOlNull').text("BoolNULL value:"+boolValnull+".datatype is:"+typeof (boolValnull));
-      
+
       }
   });
     </script>
