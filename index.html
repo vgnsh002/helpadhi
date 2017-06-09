@@ -6,22 +6,22 @@
 
       <meta charset="utf-8">
       <title>Voice Recognizer</title>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.js"></script>
+    
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-       <script src='https://code.responsivevoice.org/responsivevoice.js'></script>
+       
   </head>
   <body>
 
     <h1>Following formats</h1>
     <h1 id=BOOl></h1>
-    <h4 id="BOOlVal">BOOlVal</h2>
-    <h4 id="BOOSTRING">BOOSTRING</h2>
-    <h4 id="BOOlNull">BOOlNull</h2>
+    <h4 id="BOOlVal">BOOlVal</h4>
+    <h4 id="BOOSTRING">BOOSTRING</h4>
+    <h4 id="BOOlNull">BOOlNull</h4>
     
     <script type="text/javascript">
     $.ajax({
     url: "data.json",
-    success: function(response){
+    success: function(objects){
      
     var bool = JSON.stringify(objects.boo);
     var boolVal=objects.boo;
