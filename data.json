@@ -1,5 +1,6 @@
 {
       "pnr":12345,
       "hello": "Flight is delayed Sorry for the inconvinence caused",
-      "arrival": "21:30"
+      "arrival": "21:30",
+      "boolean":false
  }
