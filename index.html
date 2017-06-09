@@ -22,7 +22,8 @@
     $.ajax({
     url: "data.json",
     success: function(response){
-    var bool = response.boo;
+       
+    var bool = JSON.stringify(response.boo);
     var boolVal=response.boo;
       $('#BOOl').text("Bool value is:"+bool+".datatype is:"+typeof (bool));
       }
