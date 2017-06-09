@@ -22,10 +22,16 @@
     $.ajax({
     url: "data.json",
     success: function(response){
-       
+     
     var bool = JSON.stringify(response.boo);
-    var boolVal=response.boo;
-      $('#BOOl').text("Bool value is:"+bool+".datatype is:"+typeof (bool));
+    var boolVal=response.objects.boo;
+    var boolValstring=response.objects.booS;
+    var boolValnull=response.objects.boonull;
+      $('#BOOl').text("Bool value after stringify is:"+bool+".datatype is:"+typeof (bool));
+       $('#BOOlVal').text("Bool value WITHOUT stringify is:"+boolVal+".datatype is:"+typeof (boolVal));
+       $('#BOOSTRING').text("BoolS value STRINGED:"+boolValstring+".datatype is:"+typeof (boolValstring));
+       $('#BOOl').text("BoolNULL value:"+boolValnull+".datatype is:"+typeof (boolValnull));
+      
       }
   });
     </script>
