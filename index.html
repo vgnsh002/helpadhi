@@ -13,18 +13,23 @@
   <body>
 
     <h1>Following formats</h1>
-    <h2 id="response"></h2>
-    <h2 id="res"></h2>
-    <h2 id="obj"></h2>
+    <h2 id="response">response</h2>
+    <h2 id="res">RES</h2>
+    <h2 id="obj">OBJ</h2>
+    <h2 id="booLean">BOOLEAN</h2>
+    <h1 id=BOOl></h1>
     <script type="text/javascript">
     $.ajax({
     url: "data.json",
     success: function(response){
      $('#response').text("response:"+response+".datatype is:"+typeof(response))
       var res = JSON.stringify(response);
-     $('#res').text("response after stringify:"+res+".datatype is:"+typeof(res))
+     $('#res').text("RES after stringify:"+res+".datatype is:"+typeof(res))
       var obj = JSON.parse(res);
-     $('#obj').text("response after parsing:"+obj+".datatype is:"+typeof (obj))
+     $('#obj').text("OBJ after parsing:"+obj+".datatype is:"+typeof (obj))
+          var bool = JSON.parse(res.boolean);
+      $('#booLean').text("Bool after parsing:"+bool+".datatype is:"+typeof (bool))
+          
       }
   });
     </script>
