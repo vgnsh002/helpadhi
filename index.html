@@ -23,10 +23,10 @@
     url: "data.json",
     success: function(response){
      
-    var bool = JSON.stringify(response.boo);
-    var boolVal=response.objects.boo;
-    var boolValstring=response.objects.booS;
-    var boolValnull=response.objects.boonull;
+    var bool = JSON.stringify(objects.boo);
+    var boolVal=objects.boo;
+    var boolValstring=objects.booS;
+    var boolValnull=objects.boonull;
       $('#BOOl').text("Bool value after stringify is:"+bool+".datatype is:"+typeof (bool));
        $('#BOOlVal').text("Bool value WITHOUT stringify is:"+boolVal+".datatype is:"+typeof (boolVal));
        $('#BOOSTRING').text("BoolS value STRINGED:"+boolValstring+".datatype is:"+typeof (boolValstring));
