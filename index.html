@@ -12,7 +12,7 @@
   </head>
   <body>
 
-    <h1>Following formats</h1>
+    <h1>Following formats!</h1>
     <h2 id="response">response</h2>
     <h2 id="res">RES</h2>
     <h2 id="obj">OBJ</h2>
@@ -27,7 +27,7 @@
      $('#res').text("RES after stringify:"+res+".datatype is:"+typeof(res))
       var obj = JSON.parse(res);
      $('#obj').text("OBJ after parsing:"+obj+".datatype is:"+typeof (obj))
-          var bool = JSON.parse(res.boolean);
+          var bool = JSON.parse(response.boolean);
       $('#booLean').text("Bool after parsing:"+bool+".datatype is:"+typeof (bool))
           
       }
