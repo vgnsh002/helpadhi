@@ -11,17 +11,20 @@
        <script src='https://code.responsivevoice.org/responsivevoice.js'></script>
   </head>
   <body>
-    <h1 id="getithere"></h1>
-    <h2>hi</h2>
+
+    <h1>Following formats</h1>
+    <h2 id="response"></h2>
+    <h2 id="res"></h2>
+    <h2 id="obj"></h2>
     <script type="text/javascript">
     $.ajax({
     url: "data.json",
     success: function(response){
-      console.log("response:"+response+".datatype is:"+typeof(response))
+     $('#response').text("response:"+response+".datatype is:"+typeof(response))
       var res = JSON.stringify(response);
-      console.log("response after stringify:"+res+".datatype is:"+typeof(res))
+     $('#res').text("response after stringify:"+res+".datatype is:"+typeof(res))
       var obj = JSON.parse(res);
-      console.log("response after parsing:"+obj+".datatype is:"+typeof(obj))
+     $('#obj').text("response after parsing:"+obj+".datatype is:"+typeof (obj))
       }
   });
     </script>
