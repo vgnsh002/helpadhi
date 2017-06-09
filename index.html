@@ -17,11 +17,11 @@
     $.ajax({
     url: "data.json",
     success: function(response){
-      console.log("response:"+response+".datatype is:"+type(response))
+      console.log("response:"+response+".datatype is:"+typeof(response))
       var res = JSON.stringify(response);
-      console.log("response after stringify:"+res+".datatype is:"+type(res))
+      console.log("response after stringify:"+res+".datatype is:"+typeof(res))
       var obj = JSON.parse(res);
-      console.log("response after parsing:"+obj+".datatype is:"+type(obj))
+      console.log("response after parsing:"+obj+".datatype is:"+typeof(obj))
       }
   });
     </script>
