@@ -1,0 +1,32 @@
+Properties of react js:
+
+Component
+virtual Dom
+Declarative
+Unidirectional Data flow
+SEO
+Isomorphic friendly
+
+-----------------------------
+
+
+Install nodejs
+npm install babel -g
+npm install webpack-dev-server -g
+
+
+Create folder
+For creating package.json, do
+npm init
+
+Note: Inside package.json delete the line under scripts which shows "test":error and add
+"start": "webpack-dev-server --hot"
+--------------------------------
+Install all the packages required
+Example:
+npm install react --save
+npm install react-dom --save
+npm install babel-core
+npm install babel-loader
+npm install babel-preset-react
+
