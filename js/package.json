@@ -1,0 +1,17 @@
+{
+  "name": "reactdemo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --hot"
+  },
+  "author": "Roopashri",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7",
+    "webpack": "^1.12.14"
+  },
+  "devDependencies": {},
+  "description": ""
+}
